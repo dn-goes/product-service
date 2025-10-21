@@ -6,7 +6,7 @@
 - **Daniel Goes**  
 - **Gulitti**  
 - **Gabriel Espadoni**  
-- **Antony**
+- **Anthony**
 
 ---
 
