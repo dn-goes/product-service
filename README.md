@@ -1,98 +1,147 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# 🛍️ Product Service – API de Catálogo de Produtos (NestJS)
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## 👨‍💻 Desenvolvido por
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+- **Daniel Goes**  
+- **Gulitti**  
+- **Gabriel Espadoni**  
+- **Antony**
 
-## Description
+---
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## 📖 Descrição do Projeto
 
-## Project setup
+
+Este projeto faz parte do **Tutorial 2 – Guia de Desenvolvimento para a Equipe B**, com o objetivo de construir uma **API REST** que gerencia um **catálogo de produtos** utilizando o **framework NestJS**.
+
+A API permite:
+- Listar todos os produtos disponíveis no catálogo.  
+- Buscar informações detalhadas de um produto específico pelo seu ID.  
+
+O servidor roda na **porta 3002**, e os dados são simulados diretamente em memória (não há banco de dados real).
+
+---
+
+## 🧩 Estrutura do Projeto
 
 ```bash
-$ npm install
+product-service/
+├── src/
+│   ├── products/
+│   │   ├── products.controller.ts  # Controlador: define os endpoints HTTP
+│   │   ├── products.service.ts     # Serviço: contém a lógica e dados simulados
+│   │   └── products.module.ts      # Módulo de produtos
+│   ├── app.module.ts               # Módulo raiz da aplicação
+│   └── main.ts                     # Ponto de entrada (inicia o servidor)
+├── package.json
+├── tsconfig.json
+└── README.md
 ```
+---
 
-## Compile and run the project
+## ⚙️ Instalação e Execução
+
+### 1️⃣ Pré-requisitos
+Certifique-se de ter instalado:  
+- **Node.js** (versão 18 ou superior)  
+- **npm**  
+- **Nest CLI** (caso ainda não tenha, instale com o comando abaixo):
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+npm install -g @nestjs/cli
 ```
 
-## Run tests
-
+###2️⃣ Criação do Projeto
 ```bash
-# unit tests
-$ npm run test
 
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+- **nest new product-service**
+- **cd product-service**
 ```
 
-## Deployment
-
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
-
+### 3️⃣ Rodar o Servidor
 ```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
-```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+- npm run start:dev
+- Após iniciar, o servidor estará acessível em:
+**👉 http://localhost:3002**
 
-## Resources
+##🧪 Testando no Postman
+- Abra o Postman (ou Insomnia) e teste os seguintes endpoints:
 
-Check out a few resources that may come in handy when working with NestJS:
+### 🔹 Listar todos os produtos
+Método: *GET*
+URL: "http://localhost:3002/products"
+``` 
+#### Retorno esperado (exemplo):
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+#json
+[
+  {
+    "productId": "a1b2c3d4-e5f6-7890-1234-567890abcdef",
+    "name": "NestJS Pro T-Shirt",
+    "price": "99.9",
+    "description": "A high-quality shirt for pro developers."
+  },
+  {
+    "productId": "b2c3d4e5-f6a7-8901-2345-67890abcdef1",
+    "name": "TypeScript Mug",
+    "price": "25.5",
+    "description": "A mug that understands your types."
+  }
+]
+### ⚠️ Observação: a resposta demora 5 segundos por causa de um bug de performance intencional.
 
-## Support
+##🔹 Buscar produto por ID
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+- Método: GET
+-URL: http://localhost:3002/products/a1b2c3d4-e5f6-7890-1234-567890abcdef
 
-## Stay in touch
+*Retorno esperado (com bug lógico):*
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+json
+{
+  "productId": "a1b2c3d4-e5f6-7890-1234-567890abcdef",
+  "name": "NestJS Pro T-Shirt",
+  "price": "99.9",
+  "description": "A high-quality shirt for pro developers."
+}
 
-## License
+#⚠️ Mesmo que você altere o ID, o endpoint sempre retorna o primeiro produto (bug intencional).
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+## Bugs Intencionais (para fins de aprendizado)
+###Tipo de Bug	Descrição	Local
+- 🧾 Bug de Contrato	O campo price foi alterado de number para string.	products.service.ts
+- 🐢 Bug de Performance	Foi adicionado um setTimeout de 5 segundos no método findAll().	products.service.ts
+- 🔁 Bug de Lógica	O método findOne() ignora o ID e retorna sempre o primeiro produto da lista.	products.service.ts
+
+#🧠 Como a API Funciona
+- O NestJS inicializa o AppModule, que importa o módulo de produtos (ProductsModule).
+
+- O ProductsController define as rotas HTTP (ex: /products e /products/:id).
+
+- O ProductsService contém a lógica da aplicação e os dados simulados.
+
+##Quando uma requisição chega:
+
+/products → o controller chama findAll() e retorna todos os produtos (com atraso de 5s).
+
+/products/:id → o controller chama findOne(id) e retorna um produto (mas com o bug, sempre o primeiro).
+
+# 🧰 Comandos Úteis
+bash
+Copiar código
+### Rodar o servidor em modo de desenvolvimento
+- npm run start:dev
+
+### Compilar o código TypeScript para JavaScript
+- npm run build
+
+### Executar o servidor compilado
+- *npm run start*
+
+### 🚀 Conclusão
+- Este projeto mostra como estruturar uma API simples com NestJS, utilizando módulos, serviços e controladores.
+- Os bugs foram adicionados intencionalmente para fins de aprendizado sobre:
+
+Contratos de tipos (TypeScript),
+
