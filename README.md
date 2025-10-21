@@ -1,4 +1,5 @@
 # 🛍️ Product Service – API de Catálogo de Produtos (NestJS)
+### (Sem Bugs)
 
 ## 👨‍💻 Desenvolvido por
 
@@ -106,14 +107,7 @@ json
   "description": "A high-quality shirt for pro developers."
 }
 
-#⚠️ Mesmo que você altere o ID, o endpoint sempre retorna o primeiro produto (bug intencional).
-
-## Bugs Intencionais (para fins de aprendizado)
-###Tipo de Bug	Descrição	Local
-- 🧾 Bug de Contrato	O campo price foi alterado de number para string.	products.service.ts
-- 🐢 Bug de Performance	Foi adicionado um setTimeout de 5 segundos no método findAll().	products.service.ts
-- 🔁 Bug de Lógica	O método findOne() ignora o ID e retorna sempre o primeiro produto da lista.	products.service.ts
-
+#⚠️ Mesmo que você altere o ID, o endpoint sempre retorna o primeiro produto (Sem Bugs)
 #🧠 Como a API Funciona
 - O NestJS inicializa o AppModule, que importa o módulo de produtos (ProductsModule).
 
