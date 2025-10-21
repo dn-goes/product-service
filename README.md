@@ -1,5 +1,5 @@
 # 🛍️ Product Service – API de Catálogo de Produtos (NestJS)
-### (Com Bugs)
+### (Sem Bugs)
 
 ## 👨‍💻 Desenvolvido por
 
